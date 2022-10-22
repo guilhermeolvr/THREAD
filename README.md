@@ -24,3 +24,16 @@ Ao final da execução, as seguintes informações devem ser apresentadas:
 
 2 - Relatório de Total arrecadado por cada cancela
 (Ordenado do maior para o menor).
+
+…or create a new repository on the command line
+echo "# Trabalho-de-SO" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/guilhermeolvr/THREAD.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/guilhermeolvr/THREAD.git
+git branch -M main
+git push -u origin main
