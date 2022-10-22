@@ -37,3 +37,79 @@ git push -u origin main
 git remote add origin https://github.com/guilhermeolvr/THREAD.git
 git branch -M main
 git push -u origin main
+
+
+package atvcompiladores;
+
+import java.util.Scanner;
+
+public class trabalhoSOparalelismo {
+	
+	
+		static int numero = 0;
+		
+		public static void main(String[] args) {
+			
+			
+			
+			new Thread(t1).start();
+			new Thread(t2).start();
+			
+			
+		}
+		
+				 		
+		static Scanner palavramista = new Scanner(System.in);   //recebendo a palavra mista
+		static String stringmista = palavramista.nextLine();
+		
+		
+		
+		
+		private static Runnable t1 = new Runnable() {
+			
+			@Override
+			public void run() {
+								
+				
+				char[] chars = stringmista.toCharArray();  //dividindo a string em blocos(caracteres) analisando caracter por caracter com o laco for
+		        for (int i = 0; i < chars.length; i++)
+		        {
+		            chars[i] = Character.isUpperCase(chars[i])
+		                                ? Character.toLowerCase(chars[i]) //se o caracter for maisculo recebe funcao Lowercase, minuscula Uppercase
+		                                : Character.toUpperCase(chars[i]);
+		        }
+		        
+		        System.out.println("palavra mista transformada:");   
+		        System.out.println(chars);   //imprimindo os caracteres
+				
+				
+				palavramista.close();
+			}
+		}; 
+		
+		
+		
+		
+		private static Runnable t2 = new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				char[] chars = stringmista.toCharArray();  //dividindo a string em blocos(caracteres) analisando caracter por caracter com o laco for
+		        for (int i = 0; i < chars.length; i++)
+		        {
+		            chars[i] = Character.isUpperCase(chars[i])
+		                                ? Character.toLowerCase(chars[i]) //se o caracter for maisculo recebe funcao Lowercase, minuscula Uppercase
+		                                : Character.toUpperCase(chars[i]);
+		        }
+		        
+		        System.out.println("palavra mista transformada:");   
+		        System.out.println(chars);   //imprimindo os caracteres
+				
+				
+				palavramista.close();
+			}
+		};
+
+	}
+
