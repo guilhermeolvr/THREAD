@@ -113,3 +113,21 @@ public class trabalhoSOparalelismo {
 
 	}
 
+
+
+Aí a gnt pede pro usuário
+O tanto de veículos
+Em cada cancela
+Pra cada cancela
+A gnt pode pegar a quantidade de carros
+E dividir pelas cancelas
+Pra poder distribuir
+Aí manda pra cada thread executar o seguinte
+O valor
+Pega o total de carros e multiplica pelo valor
+Podemos printar tbm
+Cancela arrecadou tanto
+O tempo q demorou pra isso
+Q aí no caso será o tempo de atendimento de cada carro
+Cancela tal arrecadou tanto
+Multiplica pelo total de carros q foram para aquele cancela
