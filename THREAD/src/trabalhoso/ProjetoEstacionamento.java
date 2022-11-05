@@ -15,16 +15,12 @@ public class ProjetoEstacionamento {
             int opcao = 0;
 
             do {
-                System.out.println("_______________________");
+            	System.out.println("_______________________");
                 System.out.println("## Escolha uma das opções abaixo ##");
-                System.out.println("Opção 1 - Defina o pedagio public void threads_criadas{\r\n" + 
-                		"    return threads_criadas;	\r\n" + 
-                		"    	\r\n" + 
-                		"    }");
+                System.out.println("Opção 1 - Cadastra novo cliente");
                 System.out.println("Opção 2 - Imprime clientes cadastrados");
                 System.out.println("Opção 0 - Sair do programa");
                 System.out.println("_______________________");
-
                 System.out.print("Digite aqui sua opção: ");
                 opcao = Integer.parseInt(sc.nextLine());
 

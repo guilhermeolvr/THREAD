@@ -63,8 +63,13 @@ public class ClientePedagio {
     			} 
     			else {
     				 for (int i = 0; i < numdecarrosporcancela; i++) {
-    					 numdecarrosporcancela = precodapassagem;
-    				     
+    					 
+    					 System.out.println("esse caro demorou: " + total + "para ser atendido" );
+    					 
+    					 numdecarrosporcancela = 5 + precodapassagem;
+    					 
+    					 System.out.println("valor arrecadado nessa cancela:");   
+    				        System.out.println(numdecarrosporcancela);
     				     }
     	        			
     		}
