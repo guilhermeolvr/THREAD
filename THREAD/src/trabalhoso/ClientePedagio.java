@@ -54,7 +54,7 @@ public class ClientePedagio {
     	}
     	}
     		
-    	private Runnable Thread() = new Runnable() {
+    	private Runnable Thread = new Runnable() {
     		
     		@Override
     	public void run() {
@@ -71,7 +71,7 @@ public class ClientePedagio {
     	} 
     			
     	};
-    	    	
+    	
         
     
     
