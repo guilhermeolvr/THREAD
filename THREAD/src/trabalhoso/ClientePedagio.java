@@ -1,3 +1,5 @@
+package trabalhoso;
+
 public class ClientePedagio {
 
     private Integer numeroDeCancelas;

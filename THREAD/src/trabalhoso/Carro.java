@@ -1,3 +1,5 @@
+package trabalhoso;
+
 public class Carro {
 
     public String modeloDoCarro;
