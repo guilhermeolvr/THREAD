@@ -9,6 +9,9 @@ public class Carro {
     long finish = System.currentTimeMillis();
 
     long total = finish - start;
-
+    
+    int precodapassagem = 5;
+    
+   
 
 }

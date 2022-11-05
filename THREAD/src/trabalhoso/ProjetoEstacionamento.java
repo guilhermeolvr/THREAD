@@ -6,9 +6,9 @@ import java.util.List;
 
 public class ProjetoEstacionamento {
     public static void main(String[] args) {
-    dadosEstacionamento();
+    dadospedagio();
     }
-        public static void dadosEstacionamento(){
+        public static void dadospedagio(){
             Scanner sc = new Scanner(System.in);
             ClientePedagio clientePedagio;
             List<ClientePedagio> listaCliente = new ArrayList<ClientePedagio>();
@@ -17,7 +17,10 @@ public class ProjetoEstacionamento {
             do {
                 System.out.println("_______________________");
                 System.out.println("## Escolha uma das opções abaixo ##");
-                System.out.println("Opção 1 - Cadastra novo cliente");
+                System.out.println("Opção 1 - Defina o pedagio public void threads_criadas{\r\n" + 
+                		"    return threads_criadas;	\r\n" + 
+                		"    	\r\n" + 
+                		"    }");
                 System.out.println("Opção 2 - Imprime clientes cadastrados");
                 System.out.println("Opção 0 - Sair do programa");
                 System.out.println("_______________________");
@@ -28,6 +31,7 @@ public class ProjetoEstacionamento {
                 if(opcao == 1){
                     //Cria um novo objeto
                     clientePedagio = new ClientePedagio();
+                    
 
                     System.out.println("Digite o numero de cancelas: ");
                     clientePedagio.setNumeroDeCancelas(Integer.parseInt(sc.nextLine()));
@@ -39,6 +43,10 @@ public class ProjetoEstacionamento {
                     clientePedagio.setNumeroDeCarros(Integer.parseInt(sc.nextLine()));
 
                     System.out.println();
+                    
+                    
+                   
+                    
 
                     //Guarda o objeto pessoa em uma lista.
                     listaCliente.add(clientePedagio);
