@@ -1,11 +1,14 @@
 package trabalhoso;
 
 import java.util.Scanner;
+
+//import ClientePedagio.threads;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjetoEstacionamento {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws InterruptedException {
     dadospedagio();
     }
         public static void dadospedagio(){
@@ -19,6 +22,7 @@ public class ProjetoEstacionamento {
                 System.out.println("## Escolha uma das opções abaixo ##");
                 System.out.println("Opção 1 - Cadastra novo cliente");
                 System.out.println("Opção 2 - Imprime clientes cadastrados");
+                System.out.println("Opção 3 - mostrar dados das cancelas");
                 System.out.println("Opção 0 - Sair do programa");
                 System.out.println("_______________________");
                 System.out.print("Digite aqui sua opção: ");
@@ -41,9 +45,35 @@ public class ProjetoEstacionamento {
                     System.out.println();
                     
                     
-                   
-                    
 
+
+                    	/*
+
+                    		System.out.println("Inicio");
+                    		Thread th1 = new Thread(t1);
+                    		System.out.println("cancela 1");
+                    		th1.start();
+
+                    		Thread th2 = new Thread(t2);
+                    		System.out.println("cancela 2");
+                    		th2.start();
+
+                    		Thread th3 = new Thread(t3);
+                    		System.out.println("cancela 3");
+                    		th3.start();
+
+                    		Thread th4 = new Thread(t4);
+                    		System.out.println("cancela 4");
+                    		th4.start();
+                    		
+                    		Thread th5 = new Thread(t5);
+                    		System.out.println("cancela 5");
+                    		th5.start();
+
+                    		System.out.println("Fim");*/
+
+             
+                    
                     //Guarda o objeto pessoa em uma lista.
                     listaCliente.add(clientePedagio);
                 }else if(opcao == 2){
@@ -61,3 +91,4 @@ public class ProjetoEstacionamento {
             sc.close();
             }
 }
+

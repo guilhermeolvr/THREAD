@@ -1,5 +1,6 @@
 package trabalhoso;
 
+import java.util.Scanner;
 import java.util.concurrent.ForkJoinTask;
 
 public class ClientePedagio {
@@ -8,10 +9,11 @@ public class ClientePedagio {
     private Integer numeroDeCancelasAtivas;
     private Integer numeroDeCarros;
     //Integer carro;
-    public long total;
+    public int total;
     public int precodapassagem;
     int numdecarrosporcancela;
     ProjetoEstacionamento estacionamento;
+    
     public Integer getNumeroDeCancelas() {
         return numeroDeCancelas;
     }
@@ -42,61 +44,102 @@ public class ClientePedagio {
             "\n"+ "Numero de cancelas ativas: "+numeroDeCancelasAtivas+"" +
             "\n"+"Numero de carros: "+numeroDeCarros+"\n";
     }
+  
     
     
-    
-    public void threads_criadas(){
-    	    	
+    public static int cancelas(){
     	
-    	for (int i = 0; i < numeroDeCancelasAtivas; i++) {
+		//int numeroDeCancelasAtivas;
+		Scanner numeroDeCancelasAtivas = new Scanner(System.in);
         
-    		new Thread().start();
-    	}
-    	}
-    		
-    	private Runnable Thread = new Runnable() {
-    		
-    		@Override
-    	public void run() {
-    			if(numdecarrosporcancela == 0 ) {
-    				System.out.println("nao passaram carros por esta cancela");	
-    			} 
-    			else {
-    				 for (int i = 0; i < numdecarrosporcancela; i++) {
-    					 
-    					 System.out.println("esse caro demorou: " + total + "para ser atendido" );
-    					 
-    					 numdecarrosporcancela = 5 + precodapassagem;
-    					 
-    					 System.out.println("valor arrecadado nessa cancela:");   
-    				        System.out.println(numdecarrosporcancela);
-    				     }
-    	        			
-    		}
-    	} 
+	       
+        System.out.println("Digite o numero de cancelas ativas: ");
+        int cancativas = numeroDeCancelasAtivas.nextInt();
+		
+		for (int i = 0; i < cancativas; i++) {
+        
+			if(cancativas == 0 ) {
+				System.out.println("nao passaram carros por esta cancela");	
+			} 
+			else {
+				 
+					 
+					 //System.out.println("esse carro demorou: " + total + "para ser atendido" );
+					 
+					 //numeroDeCancelasAtivas = 5 + precodapassagem;
+				//int valortotal  = precodapassagem *  numcarro;
+					 System.out.println("valor arrecadado nessa cancela:");   
+				       
+					 System.out.println(numeroDeCancelasAtivas);
+				        
+				          
+			}
+		}
+		return cancativas;
+	 
+			
+	
+	}
+   /* public class threads {
+
+    	
+        
+
+    	public static Runnable t1 = new Runnable() {
+    		public void run() {
     			
+    			
+    			
+    			System.out.println(threads.Carro());
+    			System.out.println(threads.cancelas());
+    		}
+    	};
+
+    	public static Runnable t2 = new Runnable() {
+    		public void run() {
+    			
+    			
+    			System.out.println(threads.Carro());
+    			System.out.println(threads.cancelas());
+    		}
+    	};
+
+    	public static Runnable t3 = new Runnable() {
+    		public void run() {
+    			
+    			
+    			
+    			System.out.println(threads.Carro());
+    			System.out.println(threads.cancelas());
+    		}
+    	};
+
+    	public static Runnable t4 = new Runnable() {
+    		public void run() {
+    			
+    			
+    			
+    			
+    			System.out.println(threads.Carro());
+    			System.out.println(threads.cancelas());
+    			
+    		}
     	};
     	
-        
-    
-    
-    
-    
-    public void divisaodoscarros(){
-     numdecarrosporcancela = numeroDeCarros / numeroDeCancelasAtivas;
-        
-    	
-    		
-    		
-    		return ;	
-       	
-        }
-    
+    	public static Runnable t5 = new Runnable() {
+    		public void run() {
+    			
+    			
+    			
+    			
+    			System.out.println(threads.Carro());
+    			System.out.println(threads.cancelas());
+    			
+    		}
+    	};*/
+    }
+
+ 
 
 
 
-
-
-
-
-}
