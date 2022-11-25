@@ -1,94 +1,63 @@
 package trabalhoso;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
-//import ClientePedagio.threads;
+public class Pedágio extends ClientePedagio {
 
-import java.util.ArrayList;
-import java.util.List;
+   public static void main(String[] args) throws InterruptedException {
+       Estacionamento();
+   }
+   public static void Estacionamento() throws InterruptedException {
 
-public class ProjetoEstacionamento {
-    public static void main(String[] args)throws InterruptedException {
-    dadospedagio();
-    }
-        public static void dadospedagio(){
-            Scanner sc = new Scanner(System.in);
-            ClientePedagio clientePedagio;
-            List<ClientePedagio> listaCliente = new ArrayList<ClientePedagio>();
-            int opcao = 0;
+       Scanner sc = new Scanner(System.in);
+       Pedágio pedagio;
+       pedagio = new Pedágio();
+       System.out.println("------------------------------------------");
+       System.out.print("Digite o numero de cancelas: ");
+       pedagio.setNumeroDeCancelas(Integer.parseInt(sc.nextLine()));
 
-            do {
-            	System.out.println("_______________________");
-                System.out.println("## Escolha uma das opções abaixo ##");
-                System.out.println("Opção 1 - Cadastra novo cliente");
-                System.out.println("Opção 2 - Imprime clientes cadastrados");
-                System.out.println("Opção 3 - mostrar dados das cancelas");
-                System.out.println("Opção 0 - Sair do programa");
-                System.out.println("_______________________");
-                System.out.print("Digite aqui sua opção: ");
-                opcao = Integer.parseInt(sc.nextLine());
+       ClientePedagio clientePedagio;
+       clientePedagio = new ClientePedagio();
 
-                if(opcao == 1){
-                    //Cria um novo objeto
-                    clientePedagio = new ClientePedagio();
-                    
+       Scanner sc2 = new Scanner(System.in);
+       System.out.print("Digite o numero de cancelas ativas: ");
+       clientePedagio.setNumeroDeCancelasAtivas(Integer.parseInt(sc2.nextLine()));
+       System.out.print("Digite o numero de carros: ");
+       clientePedagio.setNumeroDeCarros(sc2.nextInt());
+       sc2.close();
 
-                    System.out.println("Digite o numero de cancelas: ");
-                    clientePedagio.setNumeroDeCancelas(Integer.parseInt(sc.nextLine()));
+       numeroDeCarrosporcancela = clientePedagio.getNumeroDeCarros() / clientePedagio.getNumeroDeCancelasAtivas();
 
-                    System.out.print("Digite o numero de cancelas ativas: ");
-                    clientePedagio.setNumeroDeCancelasAtivas(Integer.parseInt(sc.nextLine()));
+       valortotal  = 5 *  clientePedagio.getNumeroDeCarros() / clientePedagio.getNumeroDeCancelasAtivas();
 
-                    System.out.print("Digite o numero de carros: ");
-                    clientePedagio.setNumeroDeCarros(Integer.parseInt(sc.nextLine()));
+       System.out.println("------------------------------------------");
+       for (int i = 0; i < pedagio.numeroDeCancelas ; i++) {
+             new Thread() {
+               @Override
+               public void run() {
+                   long start = System.currentTimeMillis();
+                   try {
+                       TimeUnit.SECONDS.sleep(2);
+                   } catch (InterruptedException e) {
+                       throw new RuntimeException(e);
+                   }
+                   System.out.println("Numero de carros nessa cancela: "+numeroDeCarrosporcancela);
+                   System.out.println("Valor arrecadado nessa cancela: R$"+ valortotal);
+                   for (int i = 0; i < pedagio.numeroDeCarrosporcancela ; i++) {
+                       long finish = System.currentTimeMillis();
 
-                    System.out.println();
-                    
-                    
+                       long total = finish - start;
+                       System.out.println("um carro passou por esta cancela: ");
+                       System.out.println("Tempo aproximado total em milisegundos = " + total);
+                       System.out.println("Tempo de inicio: " + start);
+                       System.out.println("Tempo de termino: " + finish);
+                       System.out.println("------------------------------------------");
+                   }
+               }
+           }.start();
+           TimeUnit.SECONDS.sleep(1);
 
-
-                    	/*
-
-                    		System.out.println("Inicio");
-                    		Thread th1 = new Thread(t1);
-                    		System.out.println("cancela 1");
-                    		th1.start();
-
-                    		Thread th2 = new Thread(t2);
-                    		System.out.println("cancela 2");
-                    		th2.start();
-
-                    		Thread th3 = new Thread(t3);
-                    		System.out.println("cancela 3");
-                    		th3.start();
-
-                    		Thread th4 = new Thread(t4);
-                    		System.out.println("cancela 4");
-                    		th4.start();
-                    		
-                    		Thread th5 = new Thread(t5);
-                    		System.out.println("cancela 5");
-                    		th5.start();
-
-                    		System.out.println("Fim");*/
-
-             
-                    
-                    //Guarda o objeto pessoa em uma lista.
-                    listaCliente.add(clientePedagio);
-                }else if(opcao == 2){
-                    if(listaCliente.isEmpty()){
-                        System.out.println("Não existem clientes cadastrados, pressione uma tecla para continuar!");
-                        sc.nextLine();
-                    }else{
-                        System.out.println(listaCliente.toString());
-
-                        System.out.println("Pressione um tecla para continuar.");
-                        sc.nextLine();
-                    }         }
-            } while (opcao != 0);
-
-            sc.close();
-            }
+       }
+   }
 }
-
